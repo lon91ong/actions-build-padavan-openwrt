@@ -67,6 +67,7 @@ jobs:
           echo "${BASE_PATH}/${t_item}/${t_item}.config 自定义模板文件未找到"
         else
           cp -f $BASE_PATH/$t_item/$t_item.config $WORK_PATH/trunk/configs/templates/$t_item.config
+          cp -f $BASE_PATH/$t_item/kernel-3.4.x.config $WORK_PATH/trunk/configs/boards/PSG1218/kernel-3.4.x.config
           echo "${t_item} 修改模板完成"
         fi
         if [ ! -f $BASE_PATH/$t_item/$t_item.sh ] ; then
