@@ -34,6 +34,7 @@ jobs:
       uses: actions/checkout@master
     - name: Initialization Environment # 2.初始环境的设置
       env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         DEBIAN_FRONTEND: noninteractive  # 非交互模式
       run: |
         sudo apt-get clean
