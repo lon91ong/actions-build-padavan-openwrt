@@ -13,8 +13,8 @@ on:
   #     - openwrt/*                     # 监听openwrt目录下所有文件的push操作
     paths:                            # 路径
       - logs/n3.md                    # 监听logs目录下 k2.md 的push操作
-  # watch:                              # 监视操作
-  #   types: [started]                  # 点击 star 之后
+  watch:                              # 监视操作
+    types: [started]                  # 点击 star 之后
 env:
   ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
   T_NAMES: "HC5962"                # 设备名字数组
