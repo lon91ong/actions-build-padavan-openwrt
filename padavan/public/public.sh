@@ -9,8 +9,6 @@ wifi_password="1234567890"               # wifi密码，切记密码最少8位 a
 version_time=$(date "+%Y%m%d")           # 自动时间更新时版本号: 20200320
 default_path="./user/shared/defaults.h"  # 默认文件配置目录
 
-rm -rf ./user
-svn co "https://github.com/chongshengB/rt-n56u/trunk/trunk/user" ./user
 
 echo '修改用户名'
 sed -i 's/#define\s*SYS_USER_ROOT\s*"admin"/#define  SYS_USER_ROOT     "'$user_name'"/g' $default_path
@@ -58,8 +56,8 @@ sed -i "/CONFIG_FIRMWARE_INCLUDE_WYYBIN/d" >> .config    # 删除配置项 网�
 ######################################################################
 
 # 科学
-echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config  # SS plus+
-echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> .config     # SS server
+echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> .config  # SS plus+
+echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=y" >> .config     # SS server
 echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=y" >> .config # simple-obfs混淆插件
 
 #  代理
@@ -70,7 +68,7 @@ echo "CONFIG_FIRMWARE_INCLUDE_IPT2SOCKS=n" >> .config    # IPT2
 
 # 广告
 echo "CONFIG_FIRMWARE_INCLUDE_ADBYBY=n" >> .config       # adbyby plus+
-echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config  # adgHome
+echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=y" >> .config  # adgHome
 echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=y" >> .config    # KP广告过滤
 
 # DNS 有关
