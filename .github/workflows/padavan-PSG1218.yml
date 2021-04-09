@@ -54,6 +54,9 @@ jobs:
         cd $WORK_PATH/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p ${WORK_PATH}/images/
+        # 穿墙、去广告
+        rm -rf $WORK_PATH/trunk/user
+        svn co "https://github.com/chongshengB/rt-n56u/trunk/trunk/user" $WORK_PATH/trunk/user
     - name: Clear And Build            # 5.清理构建树并开始构建
       run: |
         cwd=`pwd`
